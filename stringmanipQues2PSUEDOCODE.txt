@@ -1,0 +1,43 @@
+# Q. Replace selected character with another in entered string.
+
+#Declaration
+DECLARE str1, str2 : String
+DECLARE to_replace, replace_with, chr : Char
+DECLARE i : Integer
+
+'Initialization
+
+str1 = ""
+str2 = ""
+to_replace = ""
+replace_with = ""
+i = 0
+chr = ""
+
+# input
+
+INPUT "Enter a string to edit: ", str1
+
+INPUT "Enter the letter to replace: ", to_replace
+
+
+INPUT "Enter the letter to replace with: ", replace_with
+
+str1 = LOWERCASE(str1)
+to_replace = LOWERCASE(to_replace)
+replace_with = LOWERCASE(replace_with)
+
+# Process
+
+FOR i = 1 TO Len(str1)
+    chr = Mid(str1, i, 1)
+    IF to_replace <> chr 
+      THEN
+        str2 = str2 & chr
+    ELSE
+        str2 = str2 & replace_with
+    ENDIF
+NEXT
+
+# Output
+OUTPUT "New string is : ", str2
