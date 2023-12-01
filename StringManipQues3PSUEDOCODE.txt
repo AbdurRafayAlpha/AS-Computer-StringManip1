@@ -1,0 +1,52 @@
+# Q. Count and output the NUMBER of an entered character in a string.
+# Also output separate counts for alphabets (cap & small together; case neutral),
+# digits and other characters in same entered string. 
+
+
+# DECLARATION
+
+DECLARE str1 : STRING
+DECLARE Tcount, alphabet_count, special_count, digit_count : INTEGER
+DECLARE chr : CHAR
+
+# INITIALIZATION
+
+str1 = ""
+Tcount = 0
+alphabet_count = 0
+digit_count = 0
+special_count = 0
+chr = ''
+
+# INPUT
+
+INPUT "Enter a sentence: ", str1
+
+# PROCESS
+
+Tcount = LENGTH(str1)
+str1 = UCASE(str1)
+
+FOR i = 1 TO Tcount
+    chr = MID(str1, i, 1)
+
+    IF chr >= 'A' And chr <= 'Z' 
+	THEN
+          alphabet_count += 1
+
+    ELSEIF chr >= '0' And chr <= '9' 
+	THEN
+          digit_count += 1
+
+    ELSE
+        special_count += 1
+
+    ENDIF
+
+NEXT i
+
+# OUTPUT
+OUTPUT "number of characters in the string inculuding spaces are: " & Tcount
+OUTPUT "number of alphabets in the string are: " & alphabet_count
+OUTPUT "number of digits in the string are: " & digit_count
+OUTPUT "number of special characters in the string inculuding spaces are: " & special_count
