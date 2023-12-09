@@ -1,0 +1,36 @@
+# Given strings a and b, return a single string with a and b separated by a space "<a> <b>", except swap the first 2 chars of each string.
+
+# DECLARATION
+Dim stra, strb, str1, str2 As String
+DECLARE first_two_char, second_two_char : STRING
+DECLARE x, y : INTEGER
+
+# INITIALIZATION
+stra = ""
+strb = ""
+str1 = ""
+str2 = ""
+first_two_char = ""
+second_two_char = ""
+x = 0
+y = 0
+
+# INPUT
+INPUT "enter a string: ", stra
+
+INPUT "enter second string. ", strb
+
+# PROCESS
+first_two_char = LEFT(stra, 2)
+x = LENGTH(stra) - LOCATE(stra, first_two_char)
+
+str1 = LEFT(strb, 2) & RIGHT(stra, x - 1)
+
+second_two_char = LEFT(strb, 2)
+y = LENGTH(strb) - LOCATE(strb, second_two_char)
+
+str2 = LEFT(stra, 2) & RIGHT(strb, y - 1)
+
+
+# OUTPUT
+OUTPUT str1 & " " & str2
