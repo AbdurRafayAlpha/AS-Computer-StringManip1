@@ -1,0 +1,41 @@
+# Given a string s, return a string where all occurences of its first char have been changed to "*"
+# except donot change the first char itself
+
+# DECLARATION   
+DECLARE str1, str2, str3, str4 : String
+DECLARE chr1, chr2 : Char
+
+# INITIALIZATION
+str1 = ""
+str2 = ""
+str3 = ""
+str4 = ""
+chr1 = ''
+chr2 = ''
+
+# INPUT
+INPUT "enter a word: ", str1
+
+# PROCESS
+chr1 = LEFT(str1, 1)
+str4 = chr1
+
+FOR i = 1 TO Len(str1)
+    IF i <> 1 
+      THEN
+        chr2 = MID(str1, i, 1)
+        IF chr2 = chr1 
+          THEN
+	    str2 = "*"
+            str4 = str4 & str2
+        ELSE
+            str3 = chr2
+            str4 = str4 & str3
+        ENDIF
+    ENDIF
+    str3 = ""
+NEXT
+
+
+# OUTPUT
+OUTPUT str4
