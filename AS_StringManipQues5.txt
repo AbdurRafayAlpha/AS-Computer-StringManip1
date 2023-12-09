@@ -1,0 +1,37 @@
+# Find the count of vowels in a string seperately
+
+# DECLARATION
+DECLARE i, Acount, Ecount, Icount, Ocount, Ucount : Integer
+DECLARE chr : Char
+DECLARE str : String
+
+# INITIALIZATION
+i = 0
+Acount = 0
+Ecount = 0
+Icount = 0
+Ocount = 0
+Ucount = 0
+chr = ""
+
+# INPUT
+INPUT "Enter a string: ", str
+
+# PROCESS
+FOR i = 1 To LENGTH(str)
+    chr = MID(str, i, 1)
+    chr = LCASE(chr)
+    IF chr = "a" THEN Acount += 1
+    IF chr = "e" THEN Ecount += 1
+    IF chr = "i" THEN Icount += 1
+    IF chr = "o" THEN Ocount += 1
+    IF chr = "u" THEN Ucount += 1
+
+NEXT i
+
+# OUTPUT
+OUTPUT "Number of A are: " & Acount
+OUTPUT "Number of E are: " & Ecount
+OUTPUT "Number of I are: " & Icount
+OUTPUT "Number of O are: " & Ocount
+OUTPUT "Number of U are: " & Ucount
