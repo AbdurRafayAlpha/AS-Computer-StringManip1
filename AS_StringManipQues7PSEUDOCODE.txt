@@ -1,0 +1,16 @@
+# Input a string s, output a string made of the first 2 And the last 2 chars of the original string.
+
+DECLARE str1, str2, first_two, last_two : String
+
+INPUT "Enter a string: " , str1
+
+IF LENGTH(str1) > 2 
+  THEN
+    first_two = LEFT(str1, 2)
+    last_two = RIGHT(str1, 2)
+
+    str2 = first_two & last_two
+    OUTPUT str2
+ELSE
+    OUTPUT str1
+ENDIF
