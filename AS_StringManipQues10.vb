@@ -7,9 +7,17 @@ Module Program
         ' Unless it already ends in "ing", in which case add 'ly' instead.
         ' if word length is less than three return it as it is
 
-        Dim word, x, str1, str2, count1, count2 As String
+        Dim word, x, str1, str2 As String
+        Dim count1, count2 As Integer
 
+        word = ""
+        x = ""
+        str1 = ""
+        str2 = ""
+        count1 = 0
+        count2 = 0
 
+        
         Console.Write("enter a word: ")
         word = Console.ReadLine()
 
