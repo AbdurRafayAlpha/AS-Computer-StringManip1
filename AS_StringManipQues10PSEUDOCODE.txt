@@ -1,0 +1,37 @@
+# Given a word, if its length is at least 3, add "ing" to its end.
+# Unless it already ends in "ing", in which case add 'ly' instead.
+# if word length is less than three return it as it is
+
+# DECLARATION
+DECLARE word, x, str1, str2 : STRING
+DECLARE count1, count2 : INTEGER
+
+# INITIALIZATION
+str1 = ""
+str2 = ""
+x = ""
+word = ""
+count1 = 0
+count2 = 0
+
+INPUT "enter a word: ", word
+
+IF LENGTH(word) >= 3 
+  THEN
+    word = LCASE(word)
+    x = RIGHT(word, 3)
+    IF x = "ing" 
+      THEN
+        str1 = word & "ly"
+        count1 += 1
+    ELSE
+        str2 = word & "ing"
+        count2 += 1
+    ENDIF
+
+
+ENDIF
+
+IF count1 > 0 THEN OUTPUT str1
+IF count2 > 0 THEN OUTPUT str2
+IF count1 < 1 AND count2 < 1 THEN OUTPUT word
